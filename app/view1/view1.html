@@ -1,0 +1,19 @@
+<div class="jumbotron">
+    <H1 style="margin-top: -50px;">Simple Interest Calculator</H1>
+    <div class="container" ng-controller="View1Ctrl">
+        <form ng-app="sivaTrial">
+            <div class="form-group">
+                <label for="principal"> Principal Amount</label>
+                <input type="text" class="form-control" id="principal" ng-model="principal" />
+                <label for="rateofinterest"> Rate of Interest</label>
+                <input type="text" class="form-control" id="rateofinterest" ng-model="rateofinterest" />
+                <label for="time"> Tennure (years)</label>
+                <input type="text" class="form-control" id="time" ng-model="tennure" />
+            </div>
+            <div class="col-md-offset-2 col-md-8 col-md-offset-2">
+                <h2>Interest amount: <strong> {{iamt() | currency}}</strong></h2>
+                <h2> Total amount: <strong>{{totall() | currency}}</strong></h2>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="jumbotron">
+  <H1 style="margin-top: -50px;">Compound Interest Calculator</H1>
+  <div class="container" ng-controller="View2Ctrl">
+    <form ng-app="sivaTrial">
+      <div class="form-group">
+        <label for="principal"> Principal Amount</label>
+        <input type="text" class="form-control" id="principal" ng-model="principal" />
+        <label for="rateofinterest"> Rate of Interest</label>
+        <input type="text" class="form-control" id="rateofinterest" ng-model="rateofinterest" />
+        <label for="time"> Tennure (years)</label>
+        <input type="text" class="form-control" id="time" ng-model="tennure" ng-change="dispText()"/>
+        <label for="frequency"> Compound Frequency</label>
+        <select id="frequency" ng-model="selectedfrequency">
+        <option ng-repeat="f in frequency" ng-value="f.val" value={{f.freq}}>{{f.freq}}</option>
+        </select>
+      </div>
+      <div class="col-md-offset-1 col-md-10 col-md-offset-1">
+        <h2>Total Compound Interest: <strong> {{iamt()-principal | currency}}</strong></h2>
+        <h2 id="invest_balance" ng-show="tennure" >Investment Balance after {{tennure}} years is: <strong> {{iamt() | currency}}</strong></h2>
+      </div>
+    </form>
+  </div>
+</div>
